@@ -1,0 +1,32 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+header{
+    align-self: center;
+}
+
+.contenedorJugadores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    width: 100%;
+}
+
+.jugador{
+    border: solid 1px purple;
+}
+
+.selecionDados{
+    display: flex;
+    flex-direction: row;
+}
+
+.botonInicio{
+    display: flex;
+    align-self: center;
+}

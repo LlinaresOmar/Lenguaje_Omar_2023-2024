@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/dados/styleJuegoDados.css">
+    <title>Juego de Dados</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>¡Juego de Dados!</h1>
+    </header>
+
+    <main>
+        <div class="contenedorJugadores">
+            <section class="jugador" id="jugador1">
+                <h3 class="">Jugador 1</h3>
+                <div class="MostrardADOS">
+                    <p class="dadosRestantes">Dados restantes:</p>
+                    <p id="DadosDisponiblesJ1">12</p>
+                </div>
+                <div class="selecionDados">
+                    <p>Numero de dados para la tirada:</p>
+                    <select id="selecionJugador1" onchange="elegirDado1()">
+                        <option value="1">1 dado</option>
+                        <option value="2">2 dados</option>
+                        <option value="3">3 dados</option>
+                        <option value="4">4 dados</option>
+                        <option value="5">5 dados</option>
+                        <option value="6">6 dados</option>
+                        <option value="7">7 dados</option>
+                        <option value="8">8 dados</option>
+                        <option value="9">9 dados</option>
+                        <option value="10">10 dados</option>
+                    </select>
+                </div>
+                <div class="dadosJugador1">
+                    <h4>Dados Jugador 1</h4>
+                    <div id="dadosJ1">
+                    Imagenes Resultados
+                    </div>
+                </div>
+                <div class="MostrarPuntosVic">
+                    <p class="puntosVic">Puntos de vicotria:</p>
+                    <p id="PuntosVictoriaNumJ1">0</p>
+                </div>
+            </section>
+
+            <section class="jugador" id="jugador2">
+                <h3 class="">Jugador 2</h3>
+                <div class="MostrardADOS">
+                    <p class="dadosRestantes">Dados restantes:</p>
+                    <p id="DadosDisponiblesJ2">12</p>
+                </div>
+                <div class="selecionDados">
+                    <p>Numero de dados para la tirada:</p>
+                    <select id="selecionJugador2" onchange="elegirDado2()">
+                        <option value="1">1 dado</option>
+                        <option value="2">2 dados</option>
+                        <option value="3">3 dados</option>
+                        <option value="4">4 dados</option>
+                        <option value="5">5 dados</option>
+                        <option value="6">6 dados</option>
+                        <option value="7">7 dados</option>
+                        <option value="8">8 dados</option>
+                        <option value="9">9 dados</option>
+                        <option value="10">10 dados</option>
+                    </select>
+                </div>
+                <div class="dadosJugador2">
+                    <h4>Dados Jugador 2</h4>
+                    <div id="dadosJ2">
+                    Imagenes Resultados
+                    </div>
+                </div>
+                <div class="MostrarPuntosVic">
+                    <p class="puntosVic">Puntos de vicotria:</p>
+                    <p id="PuntosVictoriaNumJ2">0</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="botonInicio" id="botonLanzar" onclick="lanzarDados()">
+            <button id="botonLanzamiento">
+                <p>¡Lanzar los dados!</p>
+            </button>
+        </div>
+        
+    </main>
+
+    <script src="../../js/dados/dadosJS.js"></script>
+</body>
+</html>

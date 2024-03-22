@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    
+}
+
+
+
+
+
+.dialog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.speech {
+    max-width: 70%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.left {
+    align-self: flex-start;
+    background-color: #add8e6; /* Color del bocadillo izquierdo */
+}
+
+.left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent #add8e6 transparent transparent;
+}
+
+.right {
+    align-self: flex-end;
+    background-color: #ffcccb; /* Color del bocadillo derecho */
+}
+
+.right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent #ffcccb;
+}

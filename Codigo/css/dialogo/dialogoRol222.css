@@ -1,0 +1,61 @@
+*{
+    border: 1px solid black;
+}
+
+body{
+    background-color: antiquewhite;
+    width: 90%;
+    margin: 50px auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+header{
+    border-radius: 20px;
+    background-color: rgb(201, 14, 14);
+    font-size: x-large;
+    color: whitesmoke;
+    height: 100px;
+    width: 90%%;
+    text-align: center;
+    line-height: 100px;
+
+}
+
+main{
+    margin-top: 25px;
+}
+
+.ContenedordeDialogo{
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    gap: 5px;
+    padding: 10px;
+    min-height: fit-content;
+}   
+
+.Imagen1 {
+    align-items: start;
+    align-content: start;
+}
+
+.Texto1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+.Texto2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.Imagen2 {
+
+}
+
+.Imgpj{
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+}
+
