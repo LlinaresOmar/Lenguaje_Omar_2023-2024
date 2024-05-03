@@ -1,59 +1,34 @@
+let numeroRandom;
+let contadorGiros = 0; // empeiza en 0, es el numero de veces que "rueda" el dado
+let lanzarIntervalo;
+let sonidoDado = new Audio("../../musica/dados/sonidoDados.mp3"); //Sonido del dado al rodar
 
-var numDadosJ1 = parseInt(document.getElementById("selecionJugador1").value);
-var numDadosJ2 = parseInt(document.getElementById("selecionJugador2").value);
-let Dados1 = {};
-let Dados2 = {};
-let ronda = 3;
-let sumaPuntos1;
-let sumaPuntos2;
-let contadorV1 = document.getElementById("PuntosVictoriaNumJ1");
-let contadorV2 = document.getElementById("PuntosVictoriaNumJ2");
-let DadosDisponiblesJ1 = parseInt(document.getElementById("DadosDisponiblesJ1"));
-let DadosDisponiblesJ2 = parseInt(document.getElementById("DadosDisponiblesJ2"));
+// numero aleatorio y dado
+function diceRoll() {
 
+  numeroRandom = Math.floor(Math.random() * 20) + 1; // genera un numeero del 1 al 20
 
-function elegirDado1(){
-
-    numDadosJ1 = parseInt(document.getElementById("selecionJugador1").value);
-    if(numDadosJ1-ronda < DadosDisponiblesJ1){
-        alert("Numero de dados de J1 demasiado alto para la tirada");
-    }
+  let d20Imagen = "../../img/dados/CarasDados/d20" + numeroRandom +".png"; //asigna la ruta de la imagen del dado
+  
+  document.querySelector(".d20").setAttribute("src", d20Imagen); // inserta el src con la ruta
 }
 
-function elegirDado2(){
-    
-    numDadosJ2 = parseInt(document.getElementById("selecionJugador2").value);
-    if(numDadosJ2-ronda < parseInt(document.getElementById("DadosDisponiblesJ2").value)){
-        alert("Numero de dados de J2 demasiado alto para la tirada");
+// funcion quue lanza el dado, llamada por el boton
+function clickRoll() {
+  lanzarIntervalo = setInterval(function() {
+    sonidoDado.play(); //sonido
+    if (contadorGiros < 8 || contadorGiros > 0) { //hace girar el dado 8 veces
+      diceRoll();
+      contadorGiros++;
+      console.log(contadorGiros);
     }
+
+    if (contadorGiros > 8) { //lo para en el ultimo giro
+      clearInterval(lanzarIntervalo);
+      contadorGiros = 0;
+
+      document.getElementById("resultado").innerHTML =
+        "Has sacado un " + numeroRandom + "!"; //enseña el ultimo numero random, el resultado de la tirada
+    }
+  }, 80);
 }
-
-console.log(numDadosJ1);
-console.log(numDadosJ2);
-
-
-function lanzarDados(){
-
-    for (let index = 0; index < numDadosJ1; index++) {
-        Dados1[index] = parseInt(Math.random()*6);
-        sumaPuntos1 += numDadosJ1[index];
-    }
-
-    for (let index = 0; index < numDadosJ1; index++) {
-        Dados2[index] = parseInt(Math.random()*6);
-        sumaPuntos2 += numDadosJ2[index];
-    }
-
-    if(sumaPuntos1 > sumaPuntos2){
-        contadorV1.textContent = (parseInt(contadorV1.value) +1)
-    } else if (sumaPuntos2 > sumaPuntos1){
-        contadorV2.textContent = (parseInt(contadorV2.value) +1)
-    }
-
-    DadosDisponiblesJ1.textContent = DadosDisponiblesJ1.value-numDadosJ1;
-    DadosDisponiblesJ2.textContent = DadosDisponiblesJ2.value-numDadosJ2;
-
-    ronda--;
-
-}
-

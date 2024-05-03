@@ -31,16 +31,50 @@ main{
     padding: 1%;
 }
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 500px) {
+    body{
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header{
+        width: 50%;
+        height: auto;
+        overflow: hidden;
+    }
+
     main {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         row-gap: 25px;
         column-gap: 2%;
         justify-content: space-evenly;
         align-content: space-evenly;
         padding: 1%;
     }
+
+    section{
+        opacity: 0.5;
+        transition: 0.3s ease-in-out;
+        background-color: rgba(192, 186, 174, 0.8);
+        border: solid 2px rgb(239, 231, 231);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        padding: 2px;
+    }
+    
+    section:hover {
+        opacity: 1;
+        color: #0f0c07;
+    }
+    
+    
+    section:hover p {
+        color: black;
+    }
+    
 }
 
 section{
