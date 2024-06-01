@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: wheat;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-height: max-content;
+	background-repeat: no-repeat;
+}
+
+
+header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #242526;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	color: aliceblue;
+	z-index: 99;
+	margin-bottom: 50px;
+}
+
+#titulo {
+	margin-left: 180px;
+}
+
+ul,
+ol {
+	list-style: none;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.menu {
+	width: 500px;
+	height: 30px;
+}
+
+.menu li a {
+	background-color: #242526;
+	color: aliceblue;
+	text-decoration: none;
+	padding: 10px 15px;
+	display: block;
+	justify-content: space-around;
+}
+
+.menu > li {
+	float: left;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.menu li a:hover {
+	color: red;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.menu li ul {
+	display: none;
+	position: absolute;
+}
+
+.menu li:hover > ul {
+	display: block;
+	width: 250px;
+}
+
+.subMenu {
+	padding: auto;
+}
+
+#btnJuegoRol{
+	background-color: red;
+	border-radius: 5%;
+}
+
+#btnJuegoRol:hover{
+	background-color: rgb(201, 36, 36);
+	color: #242526;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+#imagenDado{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	height: 80px;
+	width: auto;
+}
